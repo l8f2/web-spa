@@ -1,7 +1,5 @@
-import 'virtual:uno.css'
-import ReactDOM from 'react-dom/client'
-import App from '@/App.tsx'
+import { createApp } from '@core/utils/create-app.tsx'
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-	<App />,
-)
+createApp({
+	root: 'root',
+})
