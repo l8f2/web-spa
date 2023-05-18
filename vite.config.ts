@@ -1,8 +1,9 @@
 import type { PluginOption } from 'vite'
 import { defineConfig } from 'vite'
 import unoCSS from 'unocss/vite'
-import react from '@vitejs/plugin-react'
 import {presetAttributify, presetIcons, presetUno} from "unocss";
+import react from '@vitejs/plugin-react'
+import svgr from "vite-plugin-svgr";
 
 const plugins: (PluginOption | PluginOption[])[] = [
   unoCSS({
@@ -21,6 +22,7 @@ const plugins: (PluginOption | PluginOption[])[] = [
     ],
     inspector: true,
   }),
+  svgr(),
   react()
 ]
 
