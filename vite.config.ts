@@ -10,6 +10,7 @@ import unoCSS from 'unocss/vite'
 import { presetAttributify, presetIcons, presetUno } from 'unocss'
 import react from '@vitejs/plugin-react'
 import svgr from 'vite-plugin-svgr'
+import checker from 'vite-plugin-checker'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import { compilerOptions } from './tsconfig.json'
 import * as path from 'path'
@@ -47,6 +48,9 @@ const plugins = (
 					title: env.VITE_PROJECT_TITLE,
 				},
 			},
+		}),
+		checker({
+			typescript: true,
 		}),
 	]
 }
