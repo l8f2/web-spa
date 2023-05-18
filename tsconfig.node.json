@@ -1,10 +1,17 @@
 {
-  "compilerOptions": {
-    "composite": true,
-    "skipLibCheck": true,
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "allowSyntheticDefaultImports": true
-  },
-  "include": ["vite.config.ts"]
+	"compilerOptions": {
+		"composite": true,
+		"skipLibCheck": true,
+		"module": "ESNext",
+		"moduleResolution": "bundler",
+		"allowSyntheticDefaultImports": true,
+		"resolveJsonModule": true,
+
+		"baseUrl": ".",
+		"paths": {
+			"@build-recipe/*": ["src/core/build-recipe/*"],
+			"@types/*": ["src/common/types/*"]
+		}
+	},
+	"include": ["src/common/types", "src/core/build-recipe", "tsconfig.json", "vite.config.ts"]
 }
