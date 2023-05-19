@@ -1,5 +1,3 @@
-import { createApp } from '@core/utils/create-app.tsx'
+import {initApp} from "@core/utils/init-app.tsx";
 
-createApp({
-	root: 'root',
-})
+initApp()
