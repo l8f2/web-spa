@@ -1,9 +1,9 @@
 declare global {
-	namespace NodeJS {
-		interface ProcessEnv extends IProcessEnv {}
-	}
+  namespace NodeJS {
+    type ProcessEnv = IProcessEnv;
+  }
 
-	interface ImportMetaEnv extends IImportMetaEnv {}
+  type ImportMetaEnv = IImportMetaEnv;
 }
 
-export {}
+export {};

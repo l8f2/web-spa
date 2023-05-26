@@ -1,3 +1,3 @@
-import {initApp} from "@core/utils/init-app.tsx";
+import { initApp } from "@core/utils/init-app.tsx";
 
-initApp()
+initApp();
