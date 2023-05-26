@@ -1,15 +1,14 @@
+import "@common/style/reset.css";
+import "virtual:uno.css";
 import { createRoot } from "react-dom/client";
-import { App } from "@/app.tsx";
 import { RouterProvider, RouterProviderProps } from "react-router-dom";
 
 type TOptions = {
-  router?: RouterProviderProps["router"];
+  router: RouterProviderProps["router"];
 };
 
 export const createApp = ({ router }: TOptions) => {
-  const root = document.getElementById("root")!;
-
-  createRoot(root).render(
-    router ? <RouterProvider router={router} /> : <App />
+  createRoot(document.getElementById("root")!).render(
+    <RouterProvider router={router} />
   );
 };
