@@ -1,18 +1,21 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import { Example, PrivateExample } from "@core/pages/example";
+import { App } from "@common/components/app.tsx";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navigate to="/example" replace />,
-  },
-  {
-    path: "/example",
-    element: <Example />,
+    element: <App />,
     children: [
       {
-        path: "private",
-        element: <PrivateExample />,
+        path: "example",
+        element: <Example />,
+        children: [
+          {
+            path: "private",
+            element: <PrivateExample />,
+          },
+        ],
       },
     ],
   },

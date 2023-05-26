@@ -1,19 +1,29 @@
 import { Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { FetchPlus } from "@/core/inventory/fetch-plus";
+import { Layout } from "@common/components/layout";
+import { BackComponent } from "@/core/inventory/components/back";
+import { useStore } from "@nanostores/react";
+import { histories } from "@common/store";
 
-const req = new FetchPlus();
+// const req = new FetchPlus();
 
 export const Example = () => {
+  const _histories = useStore(histories);
+
   useEffect(() => {
-    console.log(req);
-  }, []);
+    console.log(1, _histories);
+  }, [_histories]);
 
   return (
-    <div>
+    <Layout>
       公開頁面 Example
       <Outlet />
-    </div>
+      <hr />
+      <BackComponent histories={_histories} />
+      <a href="http://localhost:9987/example" target={"_blank"}>
+        跳個ˊ頁面
+      </a>
+    </Layout>
   );
 };
 
