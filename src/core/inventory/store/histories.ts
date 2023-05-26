@@ -8,19 +8,19 @@ type THistory = {
   pathname: string;
 };
 
-export const histories = atom<THistory[]>([]);
+export const $histories = atom<THistory[]>([]);
 
 export const useRecordHistories = () => {
   const location = useLocation();
 
   useEffect(() => {
-    histories.set(
+    $histories.set(
       produce((e) => {
         e.push({
-          idx: e[e.length - 1]?.idx || 0,
+          idx: (e[e.length - 1]?.idx || 0) + 1,
           pathname: location.pathname,
         });
-      })(histories.get())
+      })($histories.get())
     );
   }, [location]);
 };
