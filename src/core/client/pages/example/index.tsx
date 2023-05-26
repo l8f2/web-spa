@@ -1,7 +1,14 @@
 import { Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { FetchPlus } from "@/core/inventory/fetch-plus";
+
+const req = new FetchPlus();
 
 export const Example = () => {
+  useEffect(() => {
+    console.log(req);
+  }, []);
+
   return (
     <div>
       公開頁面 Example
