@@ -1,3 +1,6 @@
-import { initApp } from "@core/utils/init-app.tsx";
+import { createApp } from "@core/utils/create-app.tsx";
+import { router } from "@/router.tsx";
 
-initApp();
+createApp({
+  router,
+});
