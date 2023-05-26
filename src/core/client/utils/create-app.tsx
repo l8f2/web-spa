@@ -8,5 +8,7 @@ type TOptions = {
 export const createApp = ({ router }: TOptions) => {
   const root = document.getElementById("root")!;
 
+  console.log(router);
+
   createRoot(root).render(<App />);
 };

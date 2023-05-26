@@ -9,13 +9,13 @@
 
 		"baseUrl": ".",
 		"paths": {
-			"@build-recipe/*": ["src/core/server/build-recipe/*"],
+			"@build-recipe/*": ["src/core/build-recipe/*"],
 			"@types/*": ["src/common/types/*"]
 		}
 	},
 	"include": [
 		"src/common/types",
-		"src/core/server/build-recipe",
+		"src/core/build-recipe",
 		"tsconfig.json",
 		"vite.config.ts"
 	]
